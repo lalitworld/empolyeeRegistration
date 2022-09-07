@@ -1,0 +1,10 @@
+{% include 'base.html' %}
+
+<h4>Create an account</h4>
+
+<form action="registration" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+
+    <input type="Submit" value="submit">
+</form>
