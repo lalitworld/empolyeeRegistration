@@ -2,9 +2,28 @@
 
 <h4>Create an account</h4>
 
+
+<script>
+    function checkpassword()
+    {
+        if(document.signup.pwd.value != document.signup.cpwd.value)
+        {
+            alert('passwd and confirmpasswd does not match !!!!!');
+            document.signup.cpwd.focus()
+            return false
+        }
+        return true
+    }
+</script>
 <form action="registration" method="post">
     {% csrf_token %}
-    {{form.as_p}}
+    
+    Firt Name <input type="text" name="first_name" placeholder="first name" required>
+    Last Name <input type="text" name="last_name" placeholder="last name" required>
+    Email <input type="email" name="email" placeholder="email" required>
+    Password <input type="password" name="pwd" placeholder="password" required>
+    confirm Password <input type="password" name="cpwd" placeholder="password" required>
+    Employee Id <input type="number" name="empid" placeholder="emp id">
 
     <input type="Submit" value="submit">
 </form>
