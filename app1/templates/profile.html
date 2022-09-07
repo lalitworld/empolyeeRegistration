@@ -1,0 +1,34 @@
+{% extends 'base_emp_home.html' %}
+{% load crispy_forms_tags %}
+{% block main %}
+
+<form action="{%url 'emp_profile'%}" method="post">
+    {% csrf_token %}
+    
+    
+    First Name <input type="text" name="Firstname" class="form-control" placeholder="Enter First Name "value = "{{request.user.first_name}}">
+    Last Name <input type="text" name="Lastname" class="form-control" placeholder="Enter First Name " value = "{{request.user.last_name}}">
+    Employee Code <input type="number" name="Empcode" class="form-control" placeholder="Enter Your Employee Code"value = "{{employee.empcode}}" readonly>
+    Designation <input type="text" name="Designation" class="form-control" placeholder="Enter Your Employee Designation " value = "{{employee.designation}}">
+    Department<input type="text" name="Empdept" class="form-control" placeholder="Enter Your Employee Department" value = "{{employee.empdept}}">
+    Address <input type="text" name="address" class="form-control" placeholder="Enter Your Employee Mobile " value = "{{employee.address}}">
+    Email <input type="email" name="Emailid" class="form-control" placeholder="Enter email id : " value = "{{employee.user.username}}" readonly>
+    DOJ<input type="date" name="joindate" class="form-control"  value = "{{employee.joindat}}" required>
+                                                                                 
+    <br><input type="submit" value="Update Profile">
+</form>
+
+
+
+{% if error == "No" %}
+<script>
+    alert("You Have Successfully Updated Your Profile .....")
+    window.location=("{% url 'index' %}");
+</script>
+{% endif %}
+{% if error == "Yes" %}
+<script>
+    alert("Something Went Wrong .....")
+</script>
+{% endif %}
+{% endblock %}
