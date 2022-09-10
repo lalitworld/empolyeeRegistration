@@ -31,12 +31,12 @@
             <div class="list-group">
                 <a href="{% url 'emp_home'%}" class="list-group-item list-group-item-warning list-group-item-action {% if request.path == '/emp_home' %} active {% endif %}">DASHBOARD</a>
                 <a href="{% url 'emp_profile'%}" class="list-group-item list-group-item-warning list-group-item-action {% if request.path == '/emp_home' %} active {% endif %}">Profile</a>
-                <a href="" class="list-group-item list-group-item-warning list-group-item-action {% if request.path == '/emp_home' %} active {% endif %}">My Experience</a>
-                <a href="" class="list-group-item list-group-item-warning list-group-item-action {% if request.path == '/emp_home' %} active {% endif %}">Edit My Experiences</a>
-                <a href="" class="list-group-item list-group-item-warning list-group-item-action {% if request.path == '/emp_home' %} active {% endif %}">My Education</a>
-                <a href="" class="list-group-item list-group-item-warning list-group-item-action {% if request.path == '/emp_home' %} active {% endif %}">Edit My Education</a>
+                <a href="{% url 'show_experiance' %}" class="list-group-item list-group-item-warning list-group-item-action {% if request.path == '/emp_home' %} active {% endif %}">My Experience</a>
+                <a href="{% url 'edit_experiance_details' %}" class="list-group-item list-group-item-warning list-group-item-action {% if request.path == '/emp_home' %} active {% endif %}">Edit My Experiences</a>
+                <a href="{% url 'show_education' %}" class="list-group-item list-group-item-warning list-group-item-action {% if request.path == '/emp_home' %} active {% endif %}">My Education</a>
+                <a href="{% url 'education_details'%}" class="list-group-item list-group-item-warning list-group-item-action {% if request.path == '/emp_home' %} active {% endif %}">Edit My Education</a>
                 <a href="" class="list-group-item list-group-item-warning list-group-item-action {% if request.path == '/emp_home' %} active {% endif %}">Change Password</a>
-                <a href="" class="list-group-item list-group-item-warning list-group-item-action {% if request.path == '/emp_home' %} active {% endif %}">Logout</a>
+                <a href="{%url 'logout'%}" class="list-group-item list-group-item-warning list-group-item-action {% if request.path == '/emp_home' %} active {% endif %}">Logout</a>
             </div>
         </div>
         <div class="col-sm-10 p-0">

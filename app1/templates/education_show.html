@@ -1,0 +1,102 @@
+{% extends 'base_emp_home.html' %}
+{% load crispy_forms_tags %}
+{% block main %}
+
+<div class="shadow m-2">
+    <div class="card-body">
+        
+        <h5 class="p-2 text-danger" style="border-bottom:2px solid orange; ">Education Details</h5>
+        <div class="container-fluid">
+            
+            <table class="table table-bordered">
+                
+                <tr>
+                <th>Post Graduation Cource Name</th>
+                <td>{{edu.pg_course}}</td>
+                </tr>
+                <tr>
+                    <th>Post Graduation College Name</th>
+                    <td>{{edu.pg_clg}}</td>
+                </tr>
+                <tr>
+                    <th>Year Of Passing</th>
+                    <td>{{edu.pg_year_of_passing}}</td>
+                </tr>
+                <tr>
+                    <th>Post Graduation Percentage</th>
+                    <td>{{edu.pg_percentage}}</td>
+                </tr>
+
+                <tr>
+                    <th>Graduation Cource Name</th>
+                    <td>{{edu.graduation}}</td>
+                </tr>
+                <tr>
+                    <th>Graduation College Name</th>
+                    <td>{{edu.graduation_clg}}</td>
+                </tr>
+                <tr>
+                    <th>Year Of Passing</th>
+                    <td>{{edu.graduation_year_of_passing}}</td>
+                </tr>
+                <tr>
+                    <th>Graduation Percentage</th>
+                    <td>{{edu.graduation_percentage}}</td>
+                </tr>
+
+                <tr>
+                    <th>Higher Secondary School </th>
+                    <td>{{edu.hsc}}</td>
+                </tr>
+                <tr>
+                    <th>Higher Secondary School Name</th>
+                    <td>{{edu.hsc_clg}}</td>
+                </tr>
+                <tr>
+                    <th>Year Of Passing</th>
+                    <td>{{edu.hsc_year_of_passing}}</td>
+                </tr>
+                <tr>
+                    <th>Higher Secondary School Percentage</th>
+                    <td>{{edu.hsc_percentage}}</td>
+                </tr>
+
+                <tr>
+                    <th>SSC</th>
+                    <td>{{edu.ssc}}</td>
+                </tr>
+                <tr>
+                    <th>SSC SCHOOL Name</th>
+                    <td>{{edu.ssc_school}}</td>
+                </tr>
+                <tr>
+                    <th>Year Of Passing</th>
+                    <td>{{edu.ssc_year_of_passing}}</td>
+                </tr>
+                <tr>
+                    <th>Post Graduation Percentage</th>
+                    <td>{{edu.ssc_percentage}}</td>
+                </tr>
+
+                
+            </table>
+            
+        </div>
+    </div>
+</div>
+    
+
+
+
+{% if error == "No" %}
+<script>
+    alert("You Have Successfully Updated Your Profile .....")
+    window.location=("{% url 'index' %}");
+</script>
+{% endif %}
+{% if error == "Yes" %}
+<script>
+    alert("Something Went Wrong .....")
+</script>
+{% endif %}
+{% endblock %}

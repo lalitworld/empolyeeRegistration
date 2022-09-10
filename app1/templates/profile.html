@@ -13,7 +13,7 @@
     Department<input type="text" name="Empdept" class="form-control" placeholder="Enter Your Employee Department" value = "{{employee.empdept}}">
     Address <input type="text" name="address" class="form-control" placeholder="Enter Your Employee Mobile " value = "{{employee.address}}">
     Email <input type="email" name="Emailid" class="form-control" placeholder="Enter email id : " value = "{{employee.user.username}}" readonly>
-    DOJ<input type="date" name="joindate" class="form-control"  value = "{{employee.joindat}}" required>
+    DOJ [{{employee.joindat}}] <input type="date" name="joindate" class="form-control"  value ="{{employee.joindat}}" required>
                                                                                  
     <br><input type="submit" value="Update Profile">
 </form>

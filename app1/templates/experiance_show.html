@@ -1,0 +1,86 @@
+{% extends 'base_emp_home.html' %}
+{% load crispy_forms_tags %}
+{% block main %}
+
+<div class="shadow m-2">
+    <div class="card-body">
+        
+        <h5 class="p-2 text-danger" style="border-bottom:2px solid orange; ">Edit Experiance Details</h5>
+        <div class="container-fluid">
+            
+            <table class="table table-bordered">
+                
+                <tr>
+                    <th>First_company_name</th>
+
+                <td>{{edu.First_company_name}}</td>
+                </tr>
+                <tr>
+                    <th>First_company_desg</th>
+                    <td>{{edu.First_company_desg}}</td>
+                </tr>
+                <tr>
+                    <th>First_company_duration</th>
+                    <td>{{edu.First_company_duration}}</td>
+                </tr>
+                <tr>
+                    <th>First_company_sal</th>
+                    <td>{{edu.First_company_sal}}</td>
+                </tr>
+
+                <tr>
+                    <th>Second_company_name</th>
+                    <td>{{edu.Second_company_name}}</td>
+                </tr>
+                <tr>
+                    <th>Second_company_desg</th>
+                    <td>{{edu.Second_company_desg}}</td>
+                </tr>
+                <tr>
+                    <th>Second_company_duration</th>
+                    <td>{{edu.Second_company_duration}}</td>
+                </tr>
+                <tr>
+                    <th>Second_company_sal</th>
+                    <td>{{edu.Second_company_sal}}</td>
+                </tr>
+
+                <tr>
+                    <th>Third_company_name</th>
+                    <td>{{edu.Third_company_name}}</td>
+                </tr>
+                <tr>
+                    <th>Third_company_desg</th>
+                    <td>{{edu.Third_company_desg}}</td>
+                </tr>
+                <tr>
+                    <th>Third_company_duration</th>
+                    <td>{{edu.Third_company_duration}}</td>
+                </tr>
+                <tr>
+                    <th>Third_company_sal</th>
+                    <td>{{edu.Third_company_sal}}</td>
+                </tr>
+
+                
+            </table>
+            
+        </div>
+    </div>
+</div>
+    
+
+
+
+{% if error == "No" %}
+<script>
+    alert("You Have Successfully Updated Your Profile .....")
+    window.location=("{% url 'index' %}");
+</script>
+{% endif %}
+{% if error == "Yes" %}
+<script>
+    alert("Something Went Wrong .....")
+</script>
+{% endif %}
+{% endblock %}

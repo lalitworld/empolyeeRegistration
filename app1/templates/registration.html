@@ -15,7 +15,7 @@
         return true
     }
 </script>
-<form action="registration" method="post">
+<form action="{% url 'registration' %}" method="post">
     {% csrf_token %}
     
     Firt Name <input type="text" name="first_name" placeholder="first name" required>

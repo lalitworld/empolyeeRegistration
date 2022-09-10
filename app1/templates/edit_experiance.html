@@ -1,0 +1,88 @@
+{% extends 'base_emp_home.html' %}
+{% load crispy_forms_tags %}
+{% block main %}
+
+<div class="shadow m-2">
+    <div class="card-body">
+        
+        <h5 class="p-2 text-danger" style="border-bottom:2px solid orange; ">Edit Experiance Details</h5>
+        <div class="container-fluid">
+            
+            <table class="table table-bordered">
+                <form action="{% url 'edit_experiance_details' %}" method="post">
+                    {% csrf_token %}
+                <tr>
+                    <th>First_company_name</th>
+
+                <td><input type="text" name="First_company_name" class = "form-control" value = "{{edu.First_company_name}}"></td>
+                </tr>
+                <tr>
+                    <th>First_company_desg</th>
+                    <td><input type="text" name="First_company_desg" class = "form-control"  value = "{{edu.First_company_desg}}"></td>
+                </tr>
+                <tr>
+                    <th>First_company_duration</th>
+                    <td><input type="text" name="First_company_duration" class = "form-control" value = "{{edu.First_company_duration}}"></td>
+                </tr>
+                <tr>
+                    <th>First_company_sal</th>
+                    <td><input type="text" name="First_company_sal" class = "form-control" value = "{{edu.First_company_sal}}"></td>
+                </tr>
+
+                <tr>
+                    <th>Second_company_name</th>
+                    <td><input type="text" name="Second_company_name" class = "form-control" value = "{{edu.Second_company_name}}"></td>
+                </tr>
+                <tr>
+                    <th>Second_company_desg</th>
+                    <td><input type="text" name="Second_company_desg" class = "form-control"  value = "{{edu.Second_company_desg}}"></td>
+                </tr>
+                <tr>
+                    <th>Second_company_duration</th>
+                    <td><input type="text" name="Second_company_duration" class = "form-control" value = "{{edu.Second_company_duration}}"></td>
+                </tr>
+                <tr>
+                    <th>Second_company_sal</th>
+                    <td><input type="text" name="Second_company_sal" class = "form-control" value = "{{edu.Second_company_sal}}"></td>
+                </tr>
+
+                <tr>
+                    <th>Third_company_name</th>
+                    <td><input type="text" name="Third_company_name" class = "form-control" value = "{{edu.Third_company_name}}"></td>
+                </tr>
+                <tr>
+                    <th>Third_company_desg</th>
+                    <td><input type="text" name="Third_company_desg" class = "form-control"  value = "{{edu.Third_company_desg}}"></td>
+                </tr>
+                <tr>
+                    <th>Third_company_duration</th>
+                    <td><input type="text" name="Third_company_duration" class = "form-control" value = "{{edu.Third_company_duration}}"></td>
+                </tr>
+                <tr>
+                    <th>Third_company_sal</th>
+                    <td><input type="text" name="Third_company_sal" class = "form-control" value = "{{edu.Third_company_sal}}"></td>
+                </tr>
+
+                
+            </table>
+            <center><input type="submit" value = "SUBMIT" class="btn btn-primary px-3"></center>
+            </form>
+        </div>
+    </div>
+</div>
+    
+
+
+
+{% if error == "No" %}
+<script>
+    alert("You Have Successfully Updated Your Profile .....")
+    window.location=("{% url 'index' %}");
+</script>
+{% endif %}
+{% if error == "Yes" %}
+<script>
+    alert("Something Went Wrong .....")
+</script>
+{% endif %}
+{% endblock %}
